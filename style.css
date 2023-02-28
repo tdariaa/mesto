@@ -228,6 +228,18 @@
     height: 282px;
 }
 
+.elenents__text {
+    margin: 25px 15px 25px 21px;
+    font-family: 'Inter';
+    font-style: black;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 100%;
+}
+
+
+
+
 .footer {
     margin: 0 auto 0;
     padding-top: 66px;
