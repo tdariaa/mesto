@@ -40,6 +40,11 @@
     padding-top: 45px;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
+@media screen and (max-width: 320px) {
+    .header {
+        padding-top: 28px;
+    }
+}
 
 
 .header__logo {
@@ -158,6 +163,9 @@
 
 
 .profile__edit-button {
+    background: center / contain no-repeat url(./images/edit-button.svg);
+    width: 24px;
+    height: 24px;
     transition: opacity .4s linear;
 }
 
@@ -168,8 +176,8 @@
 
 @media screen and (max-width: 975px) {
     .profile__edit-button {
-        max-width: 18px;
-        min-height: 18px;
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -249,12 +257,20 @@
 
 
 .elements__like-button {
+    width: 22px;
+    height: 19px;
+    background: center / contain no-repeat url(./images/like.svg);
     transition: opacity .4s linear;
 }
 
 .elements__like-button:hover {
     opacity: .6;
 }
+
+.likeButtonActive {
+    background: center / contain no-repeat url(./images/like-active.svg);
+}
+
 
 .footer {
     margin: 0 auto 0;
@@ -302,6 +318,11 @@
     right: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.popup.openPopup {
+    display: block;
 }
 
 .popup__container {
@@ -393,6 +414,12 @@
     font-size: 18px;
     line-height: 100%;
     color: #FFFFFF;
+    border-radius: 2px;
+    transition: opacity .4s linear;
+}
+.popup__button:hover {
+    opacity: .6;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
 }
 
 @media screen and (max-width: 600px) {
@@ -410,8 +437,8 @@
     position: absolute;
     top: calc((32px + 8px)*(-1));
     right: calc((32px + 8px)*(-1));
-    transition: opacity .4s linear;
     background: center / contain no-repeat url(./images/close-icon.svg);
+    transition: opacity .4s linear;
 }
 
 .popup__close:hover {
