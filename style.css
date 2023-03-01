@@ -321,6 +321,14 @@
     z-index: 3;
 }
 
+@media screen and (max-width: 600px) {
+    .popup__form {
+        width: 282px;
+        height: 322px;
+    }
+}
+
+
 .popup__title {
     padding: 34px 64px 48px 36px;
     margin: 0;
@@ -331,28 +339,90 @@
     line-height: 29px;
 }
 
+@media screen and (max-width: 600px) {
+    .popup__title {
+        padding: 25px 22px 75px 22px;
+        font-size: 18px;
+        line-height: 100%;
+    }
+}
+
 .popup__input {
     margin: 0 auto 30px;
-    padding:0;
+    padding: 0;
     display: block;
     width: 358px;
-    min-height: 27px;
+    height: 27px;
     background-color: transparent;
     box-sizing: border-box;
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+    overflow: visible;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 100%;
+    color: #000;
+    padding-bottom: 10px;
 }
+
 .popup__input:nth-child(2) {
     margin-bottom: 48px;
 }
 
+@media screen and (max-width: 600px) {
+    .popup__input {
+        width: 238px;
+        font-size: 14px;
+    }
+    
+    .popup__input:nth-child(2) {
+        margin-bottom: 45px;
+    }
+}
+
+
 .popup__button {
     width: 358px;
-    min-height: 50px;
-    background-color:  #000000;
+    height: 50px;
+    background-color: #000000;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 100%;    
+    line-height: 100%;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__button {
+        width: 238px;
+        height: 46px;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+}
+
+.popup__close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: calc((32px + 8px)*(-1));
+    right: calc((32px + 8px)*(-1));
+    transition: opacity .4s linear;
+    background: center / contain no-repeat url(./images/close-icon.svg);
+}
+
+.popup__close:hover {
+    opacity: .6;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__close {
+        width: 20px;
+        height: 20px;
+        top: calc((20px + 16px)*(-1));
+        right: 0;
+    }
 }
