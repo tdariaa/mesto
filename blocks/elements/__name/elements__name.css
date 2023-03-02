@@ -1,0 +1,7 @@
+.elements__name {
+  margin: 0;
+  width: 246px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

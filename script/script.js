@@ -33,7 +33,7 @@ for (let i = 0; i < 6; i++) {
     let likeButton = elements.querySelectorAll('.elements__like-button')[i];
     likeButton.addEventListener('click', function (e) {
         e.preventDefault();
-        likeButton.classList.toggle('likeButtonActive');
+        likeButton.classList.toggle('elements__like-button_active');
     });
 }
 
@@ -58,4 +58,4 @@ function handleFormSubmit(evt) {
     profileAbout.textContent = popupFormAbout.value;
 }
 
-formElement.addEventListener('submit', popupFormSave); 
+formElement.addEventListener('submit', popupFormSave);
