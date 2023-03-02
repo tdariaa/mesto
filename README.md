@@ -20,3 +20,5 @@ It is also possible to remove the "likes".
 4. BEM methodology, organization of the file structure - Nested.
 
 ## Link
+
+[Link to GitHub Pages](https://tdariaa.github.io/mesto/#)
