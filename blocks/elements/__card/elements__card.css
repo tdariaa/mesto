@@ -2,4 +2,5 @@
   background-color: #FFFFFF;
   border-radius: 3%;
   min-height: 361px;
+  overflow: hidden;
 }

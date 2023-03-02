@@ -1,7 +1,8 @@
 .profile__info {
+  max-width: calc(880px - 120px - 30px - 150px - 30px);
   color: #FFFFFF;
   display: grid;
-  grid-template-columns: max-content min-content;
+  grid-template-columns: 1fr min-content;
   grid-template-rows: repeat(2, min-content);
   align-items: center;
   column-gap: 18px;
@@ -11,7 +12,6 @@
 
 @media screen and (max-width: 975px) {
   .profile__info {
-
     max-width: 100%;
     grid-template-columns: 100% min-content;
     column-gap: 0;
