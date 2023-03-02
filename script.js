@@ -5,6 +5,7 @@ let profileAbout = document.querySelector('.profile__subtitle');
 let popupFormSave = document.querySelector('.popup__button');
 
 let popupForm = document.querySelector('.popup__form');
+let formElement = popupForm.querySelector('.popup__input');
 let popupFormName = popupForm.querySelector('.popup__input_name');
 let popupFormAbout = popupForm.querySelector('.popup__input_about');
 
@@ -37,9 +38,7 @@ for (let i = 0; i < 6; i++) {
 }
 
 
-// __________________LIKE BUTTON __________________
-
-
+// __________________SAVE BUTTON __________________
 
 popupFormSave.addEventListener('click', function (e) {
     e.preventDefault();
@@ -48,7 +47,15 @@ popupFormSave.addEventListener('click', function (e) {
 
 
     popup.classList.remove('openPopup');
-    //popupForm.addEventListener('submit', handleFormSubmit);
+
 });
 
 
+//______________________ Обработчик «отправки» формы ___________________________
+function handleFormSubmit(evt) {
+    evt.preventDefault();
+    profileName.textContent = popupFormName.value;
+    profileAbout.textContent = popupFormAbout.value;
+}
+
+formElement.addEventListener('submit', popupFormSave); 

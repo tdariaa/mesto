@@ -259,8 +259,10 @@
 .elements__like-button {
     width: 22px;
     height: 19px;
-    background: center / contain no-repeat url(./images/like.svg);
+    background: center / cover no-repeat url(./images/like.svg);
     transition: opacity .4s linear;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 .elements__like-button:hover {
