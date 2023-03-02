@@ -1,4 +1,15 @@
 let popup = document.querySelector('.popup');
+let profileName = document.querySelector('.profile__title');
+let profileAbout = document.querySelector('.profile__subtitle');
+
+let popupFormSave = document.querySelector('.popup__button');
+
+let popupForm = document.querySelector('.popup__form');
+let popupFormName = popupForm.querySelector('.popup__input_name');
+let popupFormAbout = popupForm.querySelector('.popup__input_about');
+
+
+// __________________POPUP __________________
 let popupEditButton = document.querySelector('.profile__edit-button');
 let popupCloseButton = document.querySelector('.popup__close');
 
@@ -9,10 +20,12 @@ popupEditButton.addEventListener('click', function (e) {
 
 popupCloseButton.addEventListener('click', () => {
     popup.classList.remove('openPopup');
+    popupFormName.value = profileName.textContent; // когда кликют на крестик - в импут записываются значения из профиля
+    popupFormAbout.value = profileAbout.textContent;
 });
 
 
-// --------------------------------------------------------------------------------------------------------
+// __________________LIKE BUTTON __________________
 let elements = document.querySelector('.elements');
 
 for (let i = 0; i < 6; i++) {
@@ -24,35 +37,18 @@ for (let i = 0; i < 6; i++) {
 }
 
 
+// __________________LIKE BUTTON __________________
 
 
 
+popupFormSave.addEventListener('click', function (e) {
+    e.preventDefault();
+    profileName.textContent = popupFormName.value;
+    profileAbout.textContent = popupFormAbout.value;
 
 
+    popup.classList.remove('openPopup');
+    //popupForm.addEventListener('submit', handleFormSubmit);
+});
 
-/*
-// Находим форму в DOM
-let formElement = // Воспользуйтесь методом querySelector()
-// Находим поля формы в DOM
-let nameInput = // Воспользуйтесь инструментом .querySelector()
-let jobInput = // Воспользуйтесь инструментом .querySelector()
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function handleFormSubmit (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                // Так мы можем определить свою логику отправки.
-                                                // О том, как это делать, расскажем позже.
-
-    // Получите значение полей jobInput и nameInput из свойства value
-
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
-}
-
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit); 
-
-*/
