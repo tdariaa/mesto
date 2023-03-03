@@ -9,12 +9,6 @@
   gap: 30px;
 }
 
-@media screen and (max-width: 1280px) {
-  .profile {
-    max-width: calc((880/1280)*100%);
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .profile {
     grid-template-columns: min-content 1fr 1fr;

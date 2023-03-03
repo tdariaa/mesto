@@ -2,7 +2,7 @@
   max-width: calc(880px - 120px - 30px - 150px - 30px);
   color: #FFFFFF;
   display: grid;
-  grid-template-columns: 1fr min-content;
+  grid-template-columns: calc(880px - 120px - 30px - 150px - 30px - 24px - 18px) min-content;
   grid-template-rows: repeat(2, min-content);
   align-items: center;
   column-gap: 18px;
