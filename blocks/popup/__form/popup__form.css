@@ -1,17 +1,19 @@
 .popup__form {
   width: 430px;
-  height: 330px;
+  min-height: 330px;
+  padding: 0 36px 0 36px;
   position: relative;
   margin: auto;
   text-align: center;
   background-color: #FFFFFF;
   border-radius: 3%;
-  z-index: 3;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 600px) {
   .popup__form {
     width: 282px;
-    height: 322px;
+    min-height: 322px;
+    padding: 0 22px 0 22px;
   }
 }

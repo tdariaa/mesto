@@ -1,7 +1,6 @@
 .elements {
   margin: 0 auto 0;
   max-width: 880px;
-  min-height: 744px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
   grid-template-rows: repeat(auto-fit, 361px);

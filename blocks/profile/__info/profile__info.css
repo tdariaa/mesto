@@ -2,7 +2,7 @@
   max-width: calc(880px - 120px - 30px - 150px - 30px);
   color: #FFFFFF;
   display: grid;
-  grid-template-columns: calc(880px - 120px - 30px - 150px - 30px - 24px - 18px) min-content;
+  grid-template-columns: fit-content(calc(336px + 244px - 18px - 24px)) min-content;
   grid-template-rows: repeat(2, min-content);
   align-items: center;
   column-gap: 18px;
@@ -13,10 +13,10 @@
 @media screen and (max-width: 975px) {
   .profile__info {
     max-width: 100%;
-    grid-template-columns: 100% min-content;
-    column-gap: 0;
+    grid-template-columns: minmax(0, 100%) min-content;
     text-align: center;
     padding-top: 26px;
     padding-bottom: 33px;
+    column-gap: 10px;
   }
 }
