@@ -13,18 +13,16 @@
 
     <div class="popup">
       <div class="popup__container">
-        <div class="popup__form">
-          <h1 class="popup__title">Редактировать профиль</h1>
+        <h2 class="popup__title">Редактировать профиль</h2>
 
-          <form>
-            <input class="popup__input popup__input_name" type="text" placeholder="Имя" value="Жак-Ив Кусто">
-            <input class="popup__input popup__input_about" type="text" placeholder="О себе"
-              value="Исследователь океана">
-            <button class="popup__button">Сохранить</button>
-          </form>
-          <div class="popup__close">
-          </div>
-        </div>
+        <form>
+          <input class="popup__input popup__input_type_name" placeholder="Имя" value="Жак-Ив Кусто">
+          <input class="popup__input popup__input_type_about" placeholder="О себе" value="Исследователь океана">
+          <button class="popup__button">Сохранить</button>
+        </form>
+
+        <button class="popup__close">
+        </button>
       </div>
     </div>
 
@@ -38,10 +36,10 @@
       </div>
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <a class="profile__edit-button" href="#"></a>
-        <h2 class="profile__subtitle">Исследователь океана</h2>
+        <button class="profile__edit-button"></button>
+        <p class="profile__subtitle">Исследователь океана</p>
       </div>
-      <a class="profile__add-button" href="#"></a>
+      <button class="profile__add-button"></button>
     </section>
 
     <section class="elements">
@@ -50,54 +48,54 @@
         <img src="./images/husky.png" alt="Хаски в заснеженных горах." class="elements__photo">
 
         <div class="elements__text">
-          <p class="elements__name">Хаски</p>
-          <a href="#" class="elements__like-button"></a>
+          <h2 class="elements__name">Хаски</h2>
+          <button class="elements__like-button"></button>
         </div>
       </div>
       <div class="elements__card">
         <img src="./images/2.png" alt="Гора Эльбрус на рассвете." class="elements__photo">
         <div class="elements__text">
           <p class="elements__name">Гора Эльбрус</p>
-          <a href="#" class="elements__like-button"></a>
+          <button class="elements__like-button"></button>
         </div>
       </div>
       <div class="elements__card">
         <img src="./images/3.png" alt="Вид на горы и лес." class="elements__photo">
         <div class="elements__text">
-          <p class="elements__name">Домбай</p>
-          <a href="#" class="elements__like-button"></a>
+          <h2 class="elements__name">Домбай</h2>
+          <button class="elements__like-button"></button>
         </div>
       </div>
       <div class="elements__card">
         <img src="./images/sobaka_i_more.png" alt="Черное море на фоне добермана." class="elements__photo">
         <div class="elements__text">
-          <p class="elements__name">Доберман</p>
-          <a href="#" class="elements__like-button"></a>
+          <h2 class="elements__name">Доберман</h2>
+          <button class="elements__like-button"></button>
         </div>
       </div>
       <div class="elements__card">
         <img src="./images/borzoi_forest.png" alt="Русская борзая на охоте в лесу." class="elements__photo">
         <div class="elements__text">
-          <p class="elements__name">Русская борзая в лесу</p>
-          <a href="#" class="elements__like-button"></a>
+          <h2 class="elements__name">Русская борзая в лесу</h2>
+          <button class="elements__like-button"></button>
         </div>
       </div>
       <div class="elements__card">
         <img src="./images/6.png" alt="Сентинский храм на территории Карачаево-Черкесии." class="elements__photo">
         <div class="elements__text">
-          <p class="elements__name">Карачаево-Черкесия</p>
-          <a href="#" class="elements__like-button"></a>
+          <h2 class="elements__name">Карачаево-Черкесия</h2>
+          <button class="elements__like-button"></button>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
   </div>
 
-  <script src="./script/index.js"></script>
+  <script src="./script/index.js" defer></script>
 </body>
 
 </html>

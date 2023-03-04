@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 1200px) {
   .profile {
-    grid-template-columns: min-content 1fr min-content;;
+    grid-template-columns: min-content 1fr min-content;
   }
 }
 

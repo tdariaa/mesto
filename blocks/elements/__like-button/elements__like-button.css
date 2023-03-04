@@ -5,6 +5,7 @@
   transition: opacity .4s linear;
   margin-top: 5px;
   margin-right: 5px;
+  border: 0;
 }
 
 .elements__like-button:hover {

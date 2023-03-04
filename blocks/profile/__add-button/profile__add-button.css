@@ -4,6 +4,7 @@
   justify-self: right;
   background: center / cover no-repeat url(../../../images/Add_Button.svg);
   transition: opacity .4s linear;
+  border: 0;
 }
 
 .profile__add-button:hover {

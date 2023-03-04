@@ -6,6 +6,7 @@
   right: calc((32px + 8px)*(-1));
   background: center / contain no-repeat url(../../../images/close-icon.svg);
   transition: opacity .4s linear;
+  border: 0;
 }
 
 .popup__close:hover {
