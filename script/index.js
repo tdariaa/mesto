@@ -4,7 +4,7 @@ const profileAbout = document.querySelector('.profile__subtitle');
 
 const popupFormSave = document.querySelector('.popup__button');
 
-const popupForm = document.querySelector('.popup__container');
+const popupForm = document.querySelector('.popup__form');
 const formElement = popupForm.querySelector('.popup__input');
 const popupFormName = popupForm.querySelector('.popup__input_type_name');
 const popupFormAbout = popupForm.querySelector('.popup__input_type_about');

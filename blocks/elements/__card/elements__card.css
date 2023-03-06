@@ -2,7 +2,4 @@
   background-color: #FFFFFF;
   border-radius: 3%;
   overflow: hidden;
-  display: grid;
-  grid-template-rows: repeat(auto-fit, 282px);
-  grid-template-columns: 282px;
 }

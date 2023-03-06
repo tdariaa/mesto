@@ -4,7 +4,8 @@
 
 @media screen and (max-width: 1024px) {
   .header__logo {
-    padding: 0 calc((27/320)*100%) 41px;
+    padding-left: 27px;
+    padding-bottom: 32px;
   }
 }
 
@@ -12,6 +13,5 @@
   .header__logo {
     max-width: 104px;
     min-height: 24px;
-    padding-bottom: 32px;
   }
 }

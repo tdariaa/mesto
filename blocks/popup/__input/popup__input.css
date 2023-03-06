@@ -22,7 +22,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__input:nth-child(2) {
+  .popup__input:nth-last-of-type(1) {
     margin-bottom: 45px;
   }
 }
