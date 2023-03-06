@@ -2,9 +2,6 @@
   margin: 0 auto 0;
   width: 100%;
   max-width: 880px;
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
 }
 
 @media screen and (max-width: 320px) {
