@@ -11,6 +11,7 @@
   border-radius: 2px;
   transition: opacity .4s linear;
   margin-bottom: 37px;
+  cursor: pointer;
 }
 
 .popup__button:hover {

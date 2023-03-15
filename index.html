@@ -11,21 +11,6 @@
 <body>
   <div class="page">
 
-    <div class="popup">
-      <div class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
-
-        <form class="popup__form">
-          <input class="popup__input popup__input_type_name" placeholder="Имя" value="Жак-Ив Кусто">
-          <input class="popup__input popup__input_type_about" placeholder="О себе" value="Исследователь океана">
-          <button class="popup__button">Сохранить</button>
-        </form>
-
-        <button class="popup__close" aria-label="Закрыть">
-        </button>
-      </div>
-    </div>
-
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип.">
     </header>
@@ -42,54 +27,49 @@
     </section>
 
     <section class="elements">
-      <div class="elements__card">
-
-        <img src="./images/husky.png" alt="Хаски в заснеженных горах." class="elements__photo">
-
-        <div class="elements__text">
-          <h2 class="elements__name">Хаски</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
+      <template id="elements">
+        <div class="elements__card">
+          <img class="elements__photo">
+          <button class="elements__trash" aria-label="Удалить"></button>
+          <div class="elements__text">
+            <h2 class="elements__name"></h2>
+            <button class="elements__like-button" aria-label="Нравится"></button>
+          </div>
         </div>
-      </div>
-      <div class="elements__card">
-        <img src="./images/2.png" alt="Гора Эльбрус на рассвете." class="elements__photo">
-        <div class="elements__text">
-          <h2 class="elements__name">Гора Эльбрус</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
-        </div>
-      </div>
-      <div class="elements__card">
-        <img src="./images/3.png" alt="Вид на горы и лес." class="elements__photo">
-        <div class="elements__text">
-          <h2 class="elements__name">Домбай</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
-        </div>
-      </div>
-      <div class="elements__card">
-        <img src="./images/sobaka_i_more.png" alt="Черное море на фоне добермана." class="elements__photo">
-        <div class="elements__text">
-          <h2 class="elements__name">Доберман</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
-        </div>
-      </div>
-      <div class="elements__card">
-        <img src="./images/borzoi_forest.png" alt="Русская борзая на охоте в лесу." class="elements__photo">
-        <div class="elements__text">
-          <h2 class="elements__name">Русская борзая в лесу</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
-        </div>
-      </div>
-      <div class="elements__card">
-        <img src="./images/6.png" alt="Сентинский храм на территории Карачаево-Черкесии." class="elements__photo">
-        <div class="elements__text">
-          <h2 class="elements__name">Карачаево-Черкесия</h2>
-          <button class="elements__like-button" aria-label="Нравится"></button>
-        </div>
-      </div>
+      </template>
     </section>
+
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+
+    <div class="popup">
+      <div class="popup__container popup__container_profile">
+        <h2 class="popup__title">Редактировать профиль</h2>
+
+        <form class="popup__form popup__form_profile">
+          <input class="popup__input popup__input_type_name" placeholder="Имя" value="Жак-Ив Кусто">
+          <input class="popup__input popup__input_type_about" placeholder="О себе" value="Исследователь океана">
+          <button class="popup__button">Сохранить</button>
+        </form>
+
+        <button class="popup__close popup__close_container" aria-label="Закрыть">
+        </button>
+      </div>
+
+      <div class="popup__container popup__container_card">
+        <h2 class="popup__title">Новое место</h2>
+
+        <form class="popup__form popup__form_card">
+          <input class="popup__input popup__input_type_name-card" placeholder="Название">
+          <input class="popup__input popup__input_type_link" placeholder="Ссылка на картинку">
+          <button class="popup__button">Сохранить</button>
+        </form>
+
+        <button class="popup__close popup__close_card" aria-label="Закрыть">
+        </button>
+      </div>
+    </div>
 
   </div>
 
