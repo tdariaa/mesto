@@ -3,7 +3,7 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__picture/popup__picture.css);
+@import url(../blocks/popup/_picture/popup_picture.css);
 @import url(../blocks/popup/_open/popup_open.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__container/_open/popup__container_open.css);

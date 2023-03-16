@@ -137,7 +137,4 @@ popupFormCard.addEventListener('submit', function (e) {
 
 popupCloseButtonPicture.addEventListener('click', () => {
   popupPicture.classList.remove('popup_open');
-  document.querySelector('.popup__photo').src = '#';
-  document.querySelector('.popup__text').textContent = '';
-  document.querySelector('.popup__photo').alt = '';
 });
