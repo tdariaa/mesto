@@ -6,5 +6,8 @@
   right: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, .5);
-  display: none;
+  display: flex;
+  transition: all .5s ease;
+	opacity: 0;
+	visibility: hidden;
 }

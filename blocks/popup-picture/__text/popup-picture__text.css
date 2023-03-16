@@ -1,0 +1,13 @@
+.popup-picture__text {
+  position: absolute;
+  bottom: calc((15px + 10px)*(-1));
+  left: 0;
+  margin: 0;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
