@@ -1,6 +1,6 @@
-const popupProfile = document.querySelector('.popup__profile');
-const popupCard = document.querySelector('.popup__card');
-const popupPicture = document.querySelector('.popup__picture');
+const popupProfile = document.querySelector('.popup_profile');
+const popupCard = document.querySelector('.popup_card');
+const popupPicture = document.querySelector('.popup_picture');
 
 const popupFormContainerProfile = document.querySelector('.popup__container_profile');
 const popupFormContainerCard = document.querySelector('.popup__container_card');
