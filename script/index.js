@@ -103,6 +103,7 @@ function createCard(link, name) {
   const cardElement = cardTemplate.querySelector('.elements__card').cloneNode(true);
   cardElement.querySelector('.elements__photo').src = link;
   cardElement.querySelector('.elements__name').textContent = name;
+  cardElement.querySelector('.elements__photo').alt = name;
 
   cardElement.querySelector('.elements__like-button').addEventListener('click', function (evt) {
     evt.target.classList.toggle('elements__like-button_active');
@@ -116,6 +117,7 @@ function createCard(link, name) {
     popupPicture.classList.add('popup_open');
     document.querySelector('.popup__photo').src = link;
     document.querySelector('.popup__text').textContent = name;
+    document.querySelector('.popup__photo').alt = name;
   });
 
   return cardElement
@@ -135,4 +137,7 @@ popupFormCard.addEventListener('submit', function (e) {
 
 popupCloseButtonPicture.addEventListener('click', () => {
   popupPicture.classList.remove('popup_open');
+  document.querySelector('.popup__photo').src = '';
+  document.querySelector('.popup__text').textContent = '';
+  document.querySelector('.popup__photo').alt = '';
 });
