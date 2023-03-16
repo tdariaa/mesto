@@ -1,9 +1,9 @@
 const popupProfile = document.querySelector('.popup__profile');
 const popupCard = document.querySelector('.popup__card');
+const popupPicture = document.querySelector('.popup__picture');
 
 const popupFormContainerProfile = document.querySelector('.popup__container_profile');
 const popupFormContainerCard = document.querySelector('.popup__container_card');
-
 
 const popupEditButton = document.querySelector('.profile__edit-button');
 const popupFormProfile = document.querySelector('.popup__form_profile');
@@ -20,13 +20,12 @@ const popupFormLink = popupFormCard.querySelector('.popup__input_type_link');
 
 const popupCloseButtonProfile = document.querySelector('.popup__close_profile');
 const popupCloseButtonCard = document.querySelector('.popup__close_card');
+const popupCloseButtonPicture = document.querySelector('.popup__close_picture');
 
 const cardTemplate = document.querySelector('#elements').content;
 const elements = document.querySelector('.elements');
 
-const popupPicture = document.querySelector('.popup-picture');
-const popupFormContainerPicture = document.querySelector('.popup__container_picture');
-const popupCloseButtonPicture = document.querySelector('.popup-picture__close');
+
 
 const initialCards = [
   {
@@ -114,9 +113,9 @@ function createCard(link, name) {
   });
 
   cardElement.querySelector('.elements__photo').addEventListener('click', function (evt) {
-    popupPicture.classList.add('popup-pic_open');
-    document.querySelector('.popup-picture__photo').src = link;
-    document.querySelector('.popup-picture__text').textContent = name;
+    popupPicture.classList.add('popup_open');
+    document.querySelector('.popup__photo').src = link;
+    document.querySelector('.popup__text').textContent = name;
   });
 
   return cardElement
@@ -135,5 +134,5 @@ popupFormCard.addEventListener('submit', function (e) {
 });
 
 popupCloseButtonPicture.addEventListener('click', () => {
-  popupPicture.classList.remove('popup-pic_open');
+  popupPicture.classList.remove('popup_open');
 });

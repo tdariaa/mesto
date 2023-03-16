@@ -1,4 +1,4 @@
-.popup-picture__text {
+.popup__text {
   position: absolute;
   bottom: calc((15px + 10px)*(-1));
   left: 0;
