@@ -4,9 +4,7 @@
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_picture/popup_picture.css);
-@import url(../blocks/popup/_open/popup_open.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__container/_open/popup__container_open.css);
 @import url(../blocks/popup/__picture-container/popup__picture-container.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
@@ -15,7 +13,7 @@
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__close/popup__close.css);
 
-
+@import url(../blocks/open/open.css);
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
