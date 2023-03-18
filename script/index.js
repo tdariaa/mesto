@@ -54,7 +54,6 @@ popupFormProfile.addEventListener('submit', function (e) {
 });
 
 //_______________________________________ADD CARDS_____________________________________________
-
 popupAddButton.addEventListener('click', function (e) {
   e.preventDefault();
   popupFormCard.reset();
