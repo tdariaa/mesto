@@ -28,8 +28,17 @@ const elementsCard = cardTemplate.querySelector('.elements__card');
 const elements = document.querySelector('.elements');
 
 //_______________________________________EDIT PROFILE_____________________________________________
+function resetSpan() {
+  const inputListSpan = document.querySelectorAll('.form__input-error');
+  inputListSpan.forEach((spanElement) => {
+    spanElement.textContent = '';
+  });
+}
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  enableValidation(validationConfig);
+  resetSpan();
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
@@ -102,4 +111,24 @@ popupFormCard.addEventListener('submit', function (e) {
 
 popupCloseButtonPicture.addEventListener('click', () => {
   closePopup(popupPicture);
+});
+
+//________________________________________________CLOSE POPUP BY CLICK ON OVERLAY__________________
+const popupAll = Array.from(document.querySelectorAll('.popup'));
+popupAll.forEach((eachPopup) => {
+  eachPopup.addEventListener('click', (evt) => {
+    if (evt.target !== evt.currentTarget) {
+      return;
+    }
+    closePopup(eachPopup);;
+  });
+});
+
+//________________________________________________CLOSE POPUP BY CLICK ON ESC__________________
+popupAll.forEach((eachPopup) => {
+  document.addEventListener('keydown', (evt) => {
+    if (evt.keyCode == 27) {
+      closePopup(eachPopup);
+    }
+  });
 });
