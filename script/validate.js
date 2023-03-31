@@ -23,7 +23,7 @@ function setEventListeners(formToValidate, { inputSelector, submitButtonSelector
   toggleButtonState(inputList, buttonElement, rest);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
-      checkInputValidity(inputElement);
+      checkInputValidity(inputElement, rest);
       if (hasInvalidInput(inputList)) {
         disableButton(buttonElement, rest);
       }
@@ -42,13 +42,15 @@ function toggleButtonState(inputList, buttonElement, {inactiveButtonClass}) {
   }
 };
 
-function checkInputValidity(inputElement) {
+function checkInputValidity(inputElement, {inputErrorClass}) {
   const currentInputErrorContainer = document.querySelector(`.${inputElement.id}-error`);
   if (inputElement.checkValidity()) {
     currentInputErrorContainer.textContent = '';
+    inputElement.classList.remove(inputErrorClass);
   }
   else {
     currentInputErrorContainer.textContent = inputElement.validationMessage;
+    inputElement.classList.add(inputErrorClass);
   }
 };
 

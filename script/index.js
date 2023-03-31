@@ -33,16 +33,23 @@ function resetSpan() {
   inputListSpan.forEach((spanElement) => {
     spanElement.textContent = '';
   });
+};
+function resetInputTypeError() {
+  const inputListElement = document.querySelectorAll('.popup__input');
+  inputListElement.forEach((inputElement) => {
+    inputElement.classList.remove('popup__input_type_error');
+  });
 }
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   enableValidation(validationConfig);
   resetSpan();
-}
+  resetInputTypeError();
+};
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-}
+};
 
 popupEditButton.addEventListener('click', function (e) {
   e.preventDefault();
