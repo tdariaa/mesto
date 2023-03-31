@@ -34,6 +34,7 @@ function resetSpan() {
     spanElement.textContent = '';
   });
 }
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   enableValidation(validationConfig);
