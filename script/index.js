@@ -29,7 +29,7 @@ const elements = document.querySelector('.elements');
 
 //_______________________________________EDIT PROFILE_____________________________________________
 function resetSpan() {
-  const inputListSpan = document.querySelectorAll('.form__input-error');
+  const inputListSpan = document.querySelectorAll('.popup__form-error');
   inputListSpan.forEach((spanElement) => {
     spanElement.textContent = '';
   });

@@ -2,7 +2,7 @@ const validationConfig = ({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'button_inactive',
+  inactiveButtonClass: 'popup__button_inactive',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 });
@@ -20,7 +20,7 @@ function enableValidation({ formSelector, ...rest }) {
 function setEventListeners(formToValidate, { inputSelector, submitButtonSelector, ...rest }) {
   const inputList = Array.from(formToValidate.querySelectorAll(inputSelector));
   const buttonElement = formToValidate.querySelector(submitButtonSelector);
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, rest);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
       checkInputValidity(inputElement);
@@ -30,26 +30,25 @@ function setEventListeners(formToValidate, { inputSelector, submitButtonSelector
       else {
         enableButton(buttonElement, rest);
       }
-
     });
   });
 };
 
-function toggleButtonState(inputList, buttonElement) {
+function toggleButtonState(inputList, buttonElement, {inactiveButtonClass}) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add('button_inactive');
+    buttonElement.classList.add(inactiveButtonClass);
   } else {
-    buttonElement.classList.remove('button_inactive');
+    buttonElement.classList.remove(inactiveButtonClass);
   }
 };
 
-function checkInputValidity(input) {
-  const currentInputErrorContainer = document.querySelector(`.${input.id}-error`);
-  if (input.checkValidity()) {
+function checkInputValidity(inputElement) {
+  const currentInputErrorContainer = document.querySelector(`.${inputElement.id}-error`);
+  if (inputElement.checkValidity()) {
     currentInputErrorContainer.textContent = '';
   }
   else {
-    currentInputErrorContainer.textContent = input.validationMessage;
+    currentInputErrorContainer.textContent = inputElement.validationMessage;
   }
 };
 
