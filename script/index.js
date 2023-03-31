@@ -34,7 +34,6 @@ function resetSpan() {
     spanElement.textContent = '';
   });
 }
-
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   enableValidation(validationConfig);
@@ -63,6 +62,7 @@ popupFormProfile.addEventListener('submit', function (e) {
 });
 
 //_______________________________________ADD CARDS_____________________________________________
+
 popupAddButton.addEventListener('click', function (e) {
   e.preventDefault();
   popupFormCard.reset();

@@ -1,0 +1,14 @@
+.popup__form-error {
+  min-height: 30px;
+  display: flex;
+  font-size: 12px;
+  color: red;
+  opacity: 0;
+  transition: 0.3s;
+  box-sizing: border-box;
+  padding-top: 5px;
+}
+
+.popup__form-error:nth-last-of-type(1) {
+  margin-bottom: 20px;
+}

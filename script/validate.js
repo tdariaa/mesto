@@ -30,6 +30,7 @@ function setEventListeners(formToValidate, { inputSelector, submitButtonSelector
       else {
         enableButton(buttonElement, rest);
       }
+
     });
   });
 };
