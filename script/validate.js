@@ -24,25 +24,20 @@ function setEventListeners(formToValidate, { inputSelector, submitButtonSelector
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
       checkInputValidity(inputElement, rest);
-      if (hasInvalidInput(inputList)) {
-        disableButton(buttonElement, rest);
-      }
-      else {
-        enableButton(buttonElement, rest);
-      }
+      toggleButtonState(inputList, buttonElement, rest)
     });
   });
 };
 
-function toggleButtonState(inputList, buttonElement, {inactiveButtonClass}) {
+function toggleButtonState(inputList, buttonElement, { ...rest }) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(inactiveButtonClass);
+    disableButton(buttonElement, rest);
   } else {
-    buttonElement.classList.remove(inactiveButtonClass);
+    enableButton(buttonElement, rest);
   }
 };
 
-function checkInputValidity(inputElement, {inputErrorClass}) {
+function checkInputValidity(inputElement, { inputErrorClass }) {
   const currentInputErrorContainer = document.querySelector(`.${inputElement.id}-error`);
   if (inputElement.checkValidity()) {
     currentInputErrorContainer.textContent = '';
@@ -58,14 +53,38 @@ function hasInvalidInput(formInputs) {
   return formInputs.some(item => !item.validity.valid);
 };
 
-function enableButton(button, {inactiveButtonClass}) {
+function enableButton(button, { inactiveButtonClass }) {
   button.classList.remove(inactiveButtonClass);
   button.setAttribute('disable', true);
 };
 
-function disableButton(button, {inactiveButtonClass}) {
+function disableButton(button, { inactiveButtonClass }) {
   button.classList.add(inactiveButtonClass);
   button.removeAttribute('disable', true);
 };
 
 enableValidation(validationConfig);
+
+
+function resetSpan({ formSelector }) {
+  const listErrorContainer = document.querySelectorAll(`${formSelector}-error`)
+  listErrorContainer.forEach((spanElement) => {
+    spanElement.textContent = '';
+  });
+};
+
+function resetInputTypeError({ inputSelector, inputErrorClass }) {
+  const inputListElement = document.querySelectorAll(inputSelector);
+  inputListElement.forEach((inputElement) => {
+    inputElement.classList.remove(inputErrorClass);
+  });
+};
+
+function checkButton({ formSelector, inputSelector, submitButtonSelector, ...rest }) {
+  const listOfForm = document.querySelectorAll(formSelector);
+  listOfForm.forEach((form) => {
+    const inputList = Array.from(form.querySelectorAll(inputSelector));
+    const buttonElement = form.querySelector(submitButtonSelector);
+    toggleButtonState(inputList, buttonElement, rest);
+  });
+};
