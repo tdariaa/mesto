@@ -5,9 +5,6 @@ const popupPicture = document.querySelector('.popup_picture');
 const popupPhoto = popupPicture.querySelector('.popup__photo');
 const popupText = popupPicture.querySelector('.popup__text');
 
-const popupFormContainerProfile = document.querySelector('.popup__container_profile');
-const popupFormContainerCard = document.querySelector('.popup__container_card');
-
 const popupEditButton = document.querySelector('.profile__edit-button');
 const popupFormProfile = document.querySelector('.popup__form_profile');
 const popupFormName = popupFormProfile.querySelector('.popup__input_type_name');
@@ -19,10 +16,6 @@ const popupAddButton = document.querySelector('.profile__add-button');
 const popupFormCard = document.querySelector('.popup__form_card');
 const popupFormNameCard = popupFormCard.querySelector('.popup__input_type_name-card');
 const popupFormLink = popupFormCard.querySelector('.popup__input_type_link');
-
-const popupCloseButtonProfile = document.querySelector('.popup__close_profile');
-const popupCloseButtonCard = document.querySelector('.popup__close_card');
-const popupCloseButtonPicture = document.querySelector('.popup__close_picture');
 
 const cardTemplate = document.querySelector('#elements').content;
 const elementsCard = cardTemplate.querySelector('.elements__card');
@@ -49,9 +42,6 @@ popupEditButton.addEventListener('click', function (e) {
   checkButton(validationConfig);
 });
 
-popupCloseButtonProfile.addEventListener('click', () => {
-  closePopup(popupProfile);
-});
 
 popupFormProfile.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -105,10 +95,6 @@ popupFormCard.addEventListener('submit', function (e) {
   e.preventDefault();
   elements.prepend(createCard(popupFormLink.value, popupFormNameCard.value));
   closePopup(popupCard);
-});
-
-popupCloseButtonPicture.addEventListener('click', () => {
-  closePopup(popupPicture);
 });
 
 //________________________________________________CLOSE POPUP BY CLICK ON OVERLAY__________________
