@@ -106,7 +106,6 @@ popupFormCard.addEventListener('submit', function (e) {
   closePopup(popupCard);
 });
 
-
 const FormValidatorProfil = new FormValidator(validationConfig, popupFormProfile);
 const FormValidatorCard = new FormValidator(validationConfig, popupFormCard);
 FormValidatorProfil.enableValidation();
