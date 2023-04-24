@@ -5,9 +5,6 @@ import FormValidator from './FormValidator.js';
 const popups = document.querySelectorAll('.popup');
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card');
-const popupPicture = document.querySelector('.popup_picture');
-const popupPhoto = popupPicture.querySelector('.popup__photo');
-const popupText = popupPicture.querySelector('.popup__text');
 
 const popupEditButton = document.querySelector('.profile__edit-button');
 const popupFormProfile = document.querySelector('.popup__form_profile');
@@ -51,7 +48,7 @@ popupEditButton.addEventListener('click', function (e) {
   e.preventDefault();
   popupFormName.value = profileName.textContent;
   popupFormAbout.value = profileAbout.textContent;
-  FormValidatorProfil.resetInput();
+  formValidatorProfil.resetInput();
   openPopup(popupProfile);
 });
 
@@ -65,7 +62,7 @@ popupFormProfile.addEventListener('submit', function (e) {
 popupAddButton.addEventListener('click', function (e) {
   e.preventDefault();
   popupFormCard.reset();
-  FormValidatorCard.resetInput();
+  formValidatorCard.resetInput();
   openPopup(popupCard);
 });
 
@@ -90,9 +87,14 @@ function closePopupByEscape(evt) {
 };
 
 // отрисовка 6 заданных карточек при загрузке
-initialCards.forEach((item) => {
+function createCard(item) {
   const card = new Card(item, cardTemplateID, openPopup);
   const cardElement = card.generateCard();
+  return cardElement;
+}
+
+initialCards.forEach((item) => {
+  const cardElement = createCard(item);
   elements.append(cardElement);
 });
 
@@ -106,7 +108,7 @@ popupFormCard.addEventListener('submit', function (e) {
   closePopup(popupCard);
 });
 
-const FormValidatorProfil = new FormValidator(validationConfig, popupFormProfile);
-const FormValidatorCard = new FormValidator(validationConfig, popupFormCard);
-FormValidatorProfil.enableValidation();
-FormValidatorCard.enableValidation();
+const formValidatorProfil = new FormValidator(validationConfig, popupFormProfile);
+const formValidatorCard = new FormValidator(validationConfig, popupFormCard);
+formValidatorProfil.enableValidation();
+formValidatorCard.enableValidation();

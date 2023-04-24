@@ -1,3 +1,7 @@
+const popupPicture = document.querySelector('.popup_picture');
+const popupPhoto = popupPicture.querySelector('.popup__photo');
+const popupText = popupPicture.querySelector('.popup__text');
+
 export default class Card {
   constructor(data, templateSelector, openPopup) {
     this._data = data;
@@ -19,30 +23,38 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
+    this._cardImage = this._element.querySelector('.elements__photo');
+    this._likeButton = this._element.querySelector('.elements__like-button');
+    this._deleteButton = this._element.querySelector('.elements__trash');
+
     this._setEventListeners();
-    this._element.querySelector('.elements__photo').src = this._link;
+    this._cardImage.src = this._link;
     this._element.querySelector('.elements__name').textContent = this._name;
+    this._cardImage.alt = this._name;
     return this._element;
   }
 
   _likeCard() {
-    this._element.querySelector('.elements__like-button').classList.toggle('elements__like-button_active');
+    this._likeButton.classList.toggle('elements__like-button_active');
   }
   _removeCard() {
     this._element.remove();
   }
+  _openCard() {
+    this._openPopup(popupPicture);
+    popupPhoto.src = this._link;
+    popupText.textContent = this._name;
+    popupPhoto.alt = this._name;
+  }
 
   _setEventListeners() {
-    this._element.querySelector('.elements__photo').addEventListener('click', () => {
-      this._openPopup(document.querySelector('.popup_picture'));
-      document.querySelector('.popup__photo').src = this._link;
-      document.querySelector('.popup__text').textContent = this._name;
-      document.querySelector('.popup__photo').alt = this._name;
+    this._cardImage.addEventListener('click', () => {
+      this._openCard();
     });
-    this._element.querySelector('.elements__like-button').addEventListener('click', () => {
+    this._likeButton.addEventListener('click', () => {
       this._likeCard();
     });
-    this._element.querySelector('.elements__trash').addEventListener('click', () => {
+    this._deleteButton.addEventListener('click', () => {
       this._removeCard();
     });
   }
