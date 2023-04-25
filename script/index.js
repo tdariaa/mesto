@@ -102,8 +102,7 @@ initialCards.forEach((item) => {
 popupFormCard.addEventListener('submit', function (e) {
   e.preventDefault();
   const newItem = { link: popupFormLink.value, name: popupFormNameCard.value };
-  const newCard = new Card(newItem, cardTemplateID, openPopup);
-  const newCardElement = newCard.generateCard();
+  const newCardElement = createCard(newItem);
   elements.prepend(newCardElement);
   closePopup(popupCard);
 });
