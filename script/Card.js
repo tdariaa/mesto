@@ -1,7 +1,3 @@
-const popupPicture = document.querySelector('.popup_picture');
-const popupPhoto = popupPicture.querySelector('.popup__photo');
-const popupText = popupPicture.querySelector('.popup__text');
-
 export default class Card {
   constructor(data, templateSelector, openPopup) {
     this._data = data;
@@ -41,10 +37,8 @@ export default class Card {
     this._element.remove();
   }
   _openCard() {
-    this._openPopup(popupPicture);
-    popupPhoto.src = this._link;
-    popupText.textContent = this._name;
-    popupPhoto.alt = this._name;
+    const data = {name: this._name, link: this._link};
+    this._openPopup(data);
   }
 
   _setEventListeners() {
