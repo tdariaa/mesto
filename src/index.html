@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Место</title>
 </head>
 
@@ -12,12 +11,12 @@
   <div class="page">
 
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="Логотип.">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип.">
     </header>
 
 
     <section class="profile">
-      <img src="./images/image.jpg" alt="Фотография Жак-Ив Кусто." class="profile__image">
+      <img src="<%=require('./images/image.jpg')%>" alt="Фотография Жак-Ив Кусто." class="profile__image">
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <button class="profile__edit-button" aria-label="Изменить"></button>
@@ -88,8 +87,6 @@
     </div>
 
   </div>
-
-  <script type="module" src="./script/index.js"></script>
 </body>
 
 </html>
