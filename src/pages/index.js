@@ -49,9 +49,10 @@ popupAddButton.addEventListener('click', function (e) {
   popupWithFormCard.open();
 });
 
+const popupPicture = new PopupWithImage(popupSelectorPicture);
+popupPicture.setEventListeners();
+
 function handleCardClick(data) {
-  const popupPicture = new PopupWithImage(popupSelectorPicture);
-  popupPicture.setEventListeners();
   popupPicture.open(data);
 };
 
@@ -74,7 +75,7 @@ renderCardList.renderItems();
 //  карточки добавляемые пользователем
 function submitFormPopupCard(evt) {
   evt.preventDefault();
-  const newCardInitial = { link: popupFormLink.value, name: popupFormNameCard.value };
+  const newCardInitial = { link: popupWithFormCard.getInputValues().link, name: popupWithFormCard.getInputValues().card };
   const newCard = createCard(newCardInitial);
   renderCardList.addItem(newCard);
   popupWithFormCard.close();
