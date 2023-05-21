@@ -46,10 +46,15 @@ const popupEditButton = document.querySelector('.profile__edit-button');
 const popupFormProfile = document.querySelector('.popup__form_profile');
 const popupAddButton = document.querySelector('.profile__add-button');
 const popupFormCard = document.querySelector('.popup__form_card');
+const profileAvatar = document.querySelector('.profile__avatar')
 const popupFormNameCard = popupFormCard.querySelector('.popup__input_type_name-card');
 const popupFormLink = popupFormCard.querySelector('.popup__input_type_link');
+const popupSelectorWarning = '.popup_warning';
 const cardTemplateID = '#elements';
 const cardTemplateSelector = '.elements';
+const warningPopup = document.querySelector('.popup_warning');
+const popupFormAvatar = document.querySelector('.popup__form_avatar');
+const popupSelectorAvatar = '.popup_avatar';
 
 export {
   initialCards,
@@ -62,8 +67,13 @@ export {
   popupFormProfile,
   popupAddButton,
   popupFormCard,
+  profileAvatar,
   popupFormNameCard,
   popupFormLink,
+  popupSelectorWarning,
   cardTemplateID,
-  cardTemplateSelector
+  cardTemplateSelector,
+  warningPopup,
+  popupFormAvatar,
+  popupSelectorAvatar
 };
