@@ -36,7 +36,8 @@ const validationConfig = ({
 
 const profilSelector = {
   nameSelector: '.profile__title',
-  aboutSelector: '.profile__subtitle'
+  aboutSelector: '.profile__subtitle',
+  profileImage: '.profile__image'
 };
 
 const popupSelectorProfile = '.popup_profile';

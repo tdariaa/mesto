@@ -47,13 +47,16 @@ const api = new Api({
 
 function submitFormPopupProfile(evt) {
   evt.preventDefault();
+  popupWithFormProfile.renderLoading(true);
   api.patchProfileData({ name: popupWithFormProfile.getInputValues().username, about: popupWithFormProfile.getInputValues().about })
     .then(function (value) {
-      console.log(value)
       profileUserInfo.setUserInfo(value.name, value.about, value.avatar);
     })
     .catch(function (value) {
-      console.log(value + ', нам жаль :(');
+      console.log('Ошибка:' + value);
+    })
+    .finally(function () {
+      popupWithFormProfile.renderLoading(false);
     });
   popupWithFormProfile.close();
 };
@@ -92,7 +95,7 @@ const popupWarning = new PopupWarning(
         element.removeCard();
       })
       .catch(function (value) {
-        console.log(value + ', нам жаль :(');
+        console.log('Ошибка:' + value);
       });
 
     popupWarning.close();
@@ -105,13 +108,16 @@ formValidatorAvatar.enableValidation();
 
 function submitFormPopupAvatar(evt) {
   evt.preventDefault();
-
+  popupWithFormAvatar.renderLoading(true);
   api.patchAvatar(popupWithFormAvatar.getInputValues().avatar)
     .then(function (value) {
       profileUserInfo.setUserInfo(value.name, value.about, value.avatar);
     })
     .catch(function (value) {
-      console.log(value + ', нам жаль :(');
+      console.log('Ошибка:' + value);
+    })
+    .finally(function () {
+      popupWithFormAvatar.renderLoading(false);
     });
 
   popupWithFormAvatar.close();
@@ -129,25 +135,22 @@ function createCard(item, profileInfo) {
     popupWarning.open,
     profileInfo,
     function handleLike(cardID, evt) {
-      if (evt.target.classList.contains('elements__like-button_active')) {
-        console.log(evt.target);
+      if (evt.target.classList.contains('elements__like_button_active')) {
         api.deleteLike(cardID)
           .then((value) => {
-            console.log(value);
-            card._dislikeCard(value);
+            card.dislikeCard(value);
           })
           .catch(function (value) {
-            console.log(value + ', нам жаль :(');
+            console.log('Ошибка:' + value);
           });
       }
       else {
         api.putLike(cardID)
           .then((value) => {
-            console.log(value);
-            card._likeCard(value);
+            card.likeCard(value);
           })
           .catch(function (value) {
-            console.log(value + ', нам жаль :(');
+            console.log('Ошибка:' + value);
           });
       }
     }
@@ -173,12 +176,12 @@ api.getAllNeededData()
     profileUserInfo.setUserInfo(profileInfo.name, profileInfo.about, profileInfo.avatar);
   })
   .catch(function (value) {
-    console.log(value + ', нам жаль :(');
+    console.log('Ошибка:' + value);
   });
 
 function submitFormPopupCard(evt) {
   evt.preventDefault();
-
+  popupWithFormCard.renderLoading(true);
   const newCardData = {
     name: popupWithFormCard.getInputValues().card,
     link: popupWithFormCard.getInputValues().link,
@@ -186,11 +189,13 @@ function submitFormPopupCard(evt) {
 
   api.postNewCard(newCardData)
     .then(function (value) {
-      console.log(value)
       renderCardList.addItem(createCard(value, value.owner));
     })
     .catch(function (value) {
-      console.log(value + ', нам жаль :(');
+      console.log('Ошибка:' + value);
+    })
+    .finally(function () {
+      popupWithFormCard.renderLoading(false);
     });
 
   popupWithFormCard.close();

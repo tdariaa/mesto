@@ -12,7 +12,6 @@ export default class CardTwo {
     this._openPopupWarning = openPopupWarning;
     this._likesLength = data.likes.length;
     this._handleLike = handleLike;
-    console.log(this._handleLike);
   }
 
   _getTemplate() {
@@ -62,12 +61,12 @@ export default class CardTwo {
     return checker(this._likes);
   }
 
-  _dislikeCard(data) {
+  dislikeCard(data) {
     this._likeButton.classList.remove('elements__like_button_active');
     this._likeCounter.textContent = data.likes.length;
   }
 
-  _likeCard(data) {
+  likeCard(data) {
     this._likeButton.classList.add('elements__like_button_active');
     this._likeCounter.textContent = data.likes.length;
   }

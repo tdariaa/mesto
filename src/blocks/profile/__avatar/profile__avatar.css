@@ -14,7 +14,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: center / 26px no-repeat url('./avataredit.svg');
+  background: center / 26px no-repeat url('../../../images/avataredit.svg');
   background-color: rgb(0, 0, 0, .7);
   content: '';
 }
