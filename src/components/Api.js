@@ -5,6 +5,13 @@ export default class Api {
     this._authorization = options.headers.authorization;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Ошибка ${res.status}`);
+  }
+
   // получить список всех карточек в виде массива (GET)
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
@@ -12,11 +19,7 @@ export default class Api {
         authorization: this._authorization
       }
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -35,11 +38,7 @@ export default class Api {
         link: link
       })
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -63,11 +62,7 @@ export default class Api {
         authorization: this._authorization
       }
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -90,11 +85,7 @@ export default class Api {
         about: about
       })
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -112,11 +103,7 @@ export default class Api {
         avatar: avatar
       })
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -131,11 +118,7 @@ export default class Api {
         'Content-Type': 'application/json'
       }
     })
-          .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
+      .then(this._checkResponse)
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен: ', err);
       });
@@ -150,13 +133,9 @@ export default class Api {
         'Content-Type': 'application/json'
       }
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
-    .catch((err) => {
-      console.log('Ошибка. Запрос не выполнен: ', err);
-    });
+      .then(this._checkResponse)
+      .catch((err) => {
+        console.log('Ошибка. Запрос не выполнен: ', err);
+      });
   }
 }
