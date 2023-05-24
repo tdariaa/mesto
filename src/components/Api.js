@@ -20,9 +20,6 @@ export default class Api {
       }
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   // добавить карточку (POST)
@@ -39,9 +36,6 @@ export default class Api {
       })
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   // удалить карточку (DELETE)
@@ -53,6 +47,7 @@ export default class Api {
         'Content-Type': 'application/json'
       }
     })
+    .then(this._checkResponse)
   }
 
   // получить данные пользователя (GET)
@@ -63,9 +58,6 @@ export default class Api {
       }
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   getAllNeededData() {
@@ -86,9 +78,6 @@ export default class Api {
       })
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   // заменить аватар (PATCH)
@@ -104,9 +93,6 @@ export default class Api {
       })
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   // “залайкать” карточку (PUT)
@@ -119,9 +105,6 @@ export default class Api {
       }
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 
   // удалить лайк карточки (DELETE)
@@ -134,8 +117,5 @@ export default class Api {
       }
     })
       .then(this._checkResponse)
-      .catch((err) => {
-        console.log('Ошибка. Запрос не выполнен: ', err);
-      });
   }
 }
